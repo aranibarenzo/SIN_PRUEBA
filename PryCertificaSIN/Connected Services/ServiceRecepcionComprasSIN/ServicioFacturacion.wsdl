@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns1="https://siat.impuestos.gob.bo/" name="ServicioFacturacion" targetNamespace="https://siat.impuestos.gob.bo/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema xmlns:tns="https://siat.impuestos.gob.bo/" elementFormDefault="unqualified" targetNamespace="https://siat.impuestos.gob.bo/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="anulacionCompra" type="tns:anulacionCompra" />
+      <xs:element name="anulacionCompraResponse" type="tns:anulacionCompraResponse" />
+      <xs:element name="confirmacionCompras" type="tns:confirmacionCompras" />
+      <xs:element name="confirmacionComprasResponse" type="tns:confirmacionComprasResponse" />
+      <xs:element name="consultaCompras" type="tns:consultaCompras" />
+      <xs:element name="consultaComprasResponse" type="tns:consultaComprasResponse" />
+      <xs:element name="recepcionPaqueteCompras" type="tns:recepcionPaqueteCompras" />
+      <xs:element name="recepcionPaqueteComprasResponse" type="tns:recepcionPaqueteComprasResponse" />
+      <xs:element name="validacionRecepcionPaqueteCompras" type="tns:validacionRecepcionPaqueteCompras" />
+      <xs:element name="validacionRecepcionPaqueteComprasResponse" type="tns:validacionRecepcionPaqueteComprasResponse" />
+      <xs:element name="verificarComunicacion" type="tns:verificarComunicacion" />
+      <xs:element name="verificarComunicacionResponse" type="tns:verificarComunicacionResponse" />
+      <xs:complexType name="verificarComunicacion">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:complexType name="verificarComunicacionResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:respuestaComunicacion" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="respuestaComunicacion">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:modelDto">
+            <xs:sequence>
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="mensajesList" nillable="true" type="tns:mensajeServicio" />
+              <xs:element minOccurs="0" name="transaccion" type="xs:boolean" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="modelDto" abstract="true">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:model">
+            <xs:sequence />
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="model" abstract="true">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:complexType name="mensajeServicio">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:modelDto">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="codigo" type="xs:int" />
+              <xs:element minOccurs="0" name="descripcion" type="xs:string" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="validacionRecepcionPaqueteCompras">
+        <xs:sequence>
+          <xs:element name="SolicitudValidacionRecepcionCompras" type="tns:solicitudValidacionRecepcionCompras" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="solicitudValidacionRecepcionCompras" final="extension restriction">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:solicitudCompras">
+            <xs:sequence>
+              <xs:element name="codigoRecepcion" type="xs:string" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="solicitudCompras">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:modelDto">
+            <xs:sequence>
+              <xs:element name="codigoAmbiente" type="xs:int" />
+              <xs:element name="codigoPuntoVenta" type="xs:int" />
+              <xs:element name="codigoSistema" type="xs:string" />
+              <xs:element name="codigoSucursal" type="xs:int" />
+              <xs:element name="cufd" type="xs:string" />
+              <xs:element name="cuis" type="xs:string" />
+              <xs:element name="nit" type="xs:long" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="validacionRecepcionPaqueteComprasResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="RespuestaServicioFacturacion" type="tns:respuestaRecepcion" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="respuestaRecepcion" final="extension restriction">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:modelDto">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="codigoDescripcion" type="xs:string" />
+              <xs:element minOccurs="0" name="codigoEstado" type="xs:int" />
+              <xs:element minOccurs="0" name="codigoRecepcion" type="xs:string" />
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="mensajesList" nillable="true" type="tns:mensajeRecepcion" />
+              <xs:element minOccurs="0" name="transaccion" type="xs:boolean" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="mensajeRecepcion" final="extension restriction">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:mensajeServicio">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="advertencia" type="xs:boolean" />
+              <xs:element minOccurs="0" name="numeroArchivo" type="xs:int" />
+              <xs:element minOccurs="0" name="numeroDetalle" type="xs:int" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="recepcionPaqueteCompras">
+        <xs:sequence>
+          <xs:element name="SolicitudRecepcionCompras" type="tns:solicitudRecepcionCompras" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="solicitudRecepcionCompras" final="extension restriction">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:solicitudCompras">
+            <xs:sequence>
+              <xs:element name="archivo" type="xs:base64Binary" />
+              <xs:element name="cantidadFacturas" type="xs:int" />
+              <xs:element name="fechaEnvio" type="xs:dateTime" />
+              <xs:element name="gestion" type="xs:int" />
+              <xs:element name="hashArchivo" type="xs:string" />
+              <xs:element name="periodo" type="xs:int" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="recepcionPaqueteComprasResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="RespuestaServicioFacturacion" type="tns:respuestaRecepcion" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="anulacionCompra">
+        <xs:sequence>
+          <xs:element name="SolicitudAnulacionCompra" type="tns:solicitudAnulacionCompra" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="solicitudAnulacionCompra" final="extension restriction">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:solicitudCompras">
+            <xs:sequence>
+              <xs:element name="codAutorizacion" type="xs:string" />
+              <xs:element name="nitProveedor" type="xs:long" />
+              <xs:element name="nroDuiDim" type="xs:string" />
+              <xs:element name="nroFactura" type="xs:long" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="anulacionCompraResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="RespuestaServicioFacturacion" type="tns:respuestaRecepcion" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="confirmacionCompras">
+        <xs:sequence>
+          <xs:element name="SolicitudConfirmacionCompras" type="tns:solicitudRecepcionCompras" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="confirmacionComprasResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="RespuestaServicioFacturacion" type="tns:respuestaRecepcion" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="consultaCompras">
+        <xs:sequence>
+          <xs:element name="SolicitudConsultaCompras" type="tns:solicitudConsultaCompras" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="solicitudConsultaCompras" final="extension restriction">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:solicitudCompras">
+            <xs:sequence>
+              <xs:element name="fecha" type="xs:dateTime" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="consultaComprasResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="RespuestaServicioFacturacion" type="tns:respuestaConsultaCompras" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="respuestaConsultaCompras">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:modelDto">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="archivo" type="xs:base64Binary" />
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="mensajesList" nillable="true" type="tns:mensajeRecepcion" />
+              <xs:element minOccurs="0" name="transaccion" type="xs:boolean" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="verificarComunicacion">
+    <wsdl:part name="parameters" element="ns1:verificarComunicacion" />
+  </wsdl:message>
+  <wsdl:message name="verificarComunicacionResponse">
+    <wsdl:part name="parameters" element="ns1:verificarComunicacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="recepcionPaqueteComprasResponse">
+    <wsdl:part name="parameters" element="ns1:recepcionPaqueteComprasResponse" />
+  </wsdl:message>
+  <wsdl:message name="confirmacionComprasResponse">
+    <wsdl:part name="parameters" element="ns1:confirmacionComprasResponse" />
+  </wsdl:message>
+  <wsdl:message name="validacionRecepcionPaqueteCompras">
+    <wsdl:part name="parameters" element="ns1:validacionRecepcionPaqueteCompras" />
+  </wsdl:message>
+  <wsdl:message name="recepcionPaqueteCompras">
+    <wsdl:part name="parameters" element="ns1:recepcionPaqueteCompras" />
+  </wsdl:message>
+  <wsdl:message name="anulacionCompraResponse">
+    <wsdl:part name="parameters" element="ns1:anulacionCompraResponse" />
+  </wsdl:message>
+  <wsdl:message name="consultaComprasResponse">
+    <wsdl:part name="parameters" element="ns1:consultaComprasResponse" />
+  </wsdl:message>
+  <wsdl:message name="validacionRecepcionPaqueteComprasResponse">
+    <wsdl:part name="parameters" element="ns1:validacionRecepcionPaqueteComprasResponse" />
+  </wsdl:message>
+  <wsdl:message name="anulacionCompra">
+    <wsdl:part name="parameters" element="ns1:anulacionCompra" />
+  </wsdl:message>
+  <wsdl:message name="confirmacionCompras">
+    <wsdl:part name="parameters" element="ns1:confirmacionCompras" />
+  </wsdl:message>
+  <wsdl:message name="consultaCompras">
+    <wsdl:part name="parameters" element="ns1:consultaCompras" />
+  </wsdl:message>
+  <wsdl:portType name="ServicioFacturacion">
+    <wsdl:operation name="verificarComunicacion">
+      <wsdl:input name="verificarComunicacion" message="ns1:verificarComunicacion" />
+      <wsdl:output name="verificarComunicacionResponse" message="ns1:verificarComunicacionResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="validacionRecepcionPaqueteCompras">
+      <wsdl:input name="validacionRecepcionPaqueteCompras" message="ns1:validacionRecepcionPaqueteCompras" />
+      <wsdl:output name="validacionRecepcionPaqueteComprasResponse" message="ns1:validacionRecepcionPaqueteComprasResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="recepcionPaqueteCompras">
+      <wsdl:input name="recepcionPaqueteCompras" message="ns1:recepcionPaqueteCompras" />
+      <wsdl:output name="recepcionPaqueteComprasResponse" message="ns1:recepcionPaqueteComprasResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="anulacionCompra">
+      <wsdl:input name="anulacionCompra" message="ns1:anulacionCompra" />
+      <wsdl:output name="anulacionCompraResponse" message="ns1:anulacionCompraResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="confirmacionCompras">
+      <wsdl:input name="confirmacionCompras" message="ns1:confirmacionCompras" />
+      <wsdl:output name="confirmacionComprasResponse" message="ns1:confirmacionComprasResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="consultaCompras">
+      <wsdl:input name="consultaCompras" message="ns1:consultaCompras" />
+      <wsdl:output name="consultaComprasResponse" message="ns1:consultaComprasResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

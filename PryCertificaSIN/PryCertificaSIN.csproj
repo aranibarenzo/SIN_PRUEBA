@@ -1,0 +1,416 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{43DABEFD-9C9D-4A1D-828F-B62B39A09423}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>PryCertificaSIN</RootNamespace>
+    <AssemblyName>PryCertificaSIN</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Connected Services\ServiceFacturacionCodigosSIN\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ServiceFacturacionCompraVentaSIN\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ServiceFacturacionOperacionesSIN\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ServiceRecepcionComprasSIN\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ServiceSincronizaSIN\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utiles\clsBehavior.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Connected Services\ServiceFacturacionCodigosSIN\PryCertificaSIN.ServiceFacturacionCodigosSIN.cufdMasivoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceFacturacionCodigosSIN\PryCertificaSIN.ServiceFacturacionCodigosSIN.cufdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceFacturacionCodigosSIN\PryCertificaSIN.ServiceFacturacionCodigosSIN.cuisMasivoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceFacturacionCodigosSIN\PryCertificaSIN.ServiceFacturacionCodigosSIN.cuisResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceFacturacionCodigosSIN\PryCertificaSIN.ServiceFacturacionCodigosSIN.notificaCertificadoRevocadoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceFacturacionCodigosSIN\PryCertificaSIN.ServiceFacturacionCodigosSIN.respuestaComunicacion.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceFacturacionCodigosSIN\PryCertificaSIN.ServiceFacturacionCodigosSIN.respuestaCufd.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceFacturacionCodigosSIN\PryCertificaSIN.ServiceFacturacionCodigosSIN.respuestaCufdMasivo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceFacturacionCodigosSIN\PryCertificaSIN.ServiceFacturacionCodigosSIN.respuestaCuis.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceFacturacionCodigosSIN\PryCertificaSIN.ServiceFacturacionCodigosSIN.respuestaCuisMasivo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceFacturacionCodigosSIN\PryCertificaSIN.ServiceFacturacionCodigosSIN.respuestaNotificaRevocado.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceFacturacionCodigosSIN\PryCertificaSIN.ServiceFacturacionCodigosSIN.respuestaVerificarNit.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceFacturacionCodigosSIN\PryCertificaSIN.ServiceFacturacionCodigosSIN.verificarComunicacionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceFacturacionCodigosSIN\PryCertificaSIN.ServiceFacturacionCodigosSIN.verificarNitResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceFacturacionCodigosSIN\ServicioFacturacionCodigos.wsdl" />
+    <None Include="Connected Services\ServiceFacturacionCodigosSIN\ServicioFacturacionCodigos1.wsdl" />
+    <None Include="Connected Services\ServiceFacturacionCompraVentaSIN\PryCertificaSIN.ServiceFacturacionCompraVentaSIN.anulacionFacturaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceFacturacionCompraVentaSIN\PryCertificaSIN.ServiceFacturacionCompraVentaSIN.recepcionAnexosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceFacturacionCompraVentaSIN\PryCertificaSIN.ServiceFacturacionCompraVentaSIN.recepcionFacturaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceFacturacionCompraVentaSIN\PryCertificaSIN.ServiceFacturacionCompraVentaSIN.recepcionMasivaFacturaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceFacturacionCompraVentaSIN\PryCertificaSIN.ServiceFacturacionCompraVentaSIN.recepcionPaqueteFacturaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceFacturacionCompraVentaSIN\PryCertificaSIN.ServiceFacturacionCompraVentaSIN.respuestaComunicacion.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceFacturacionCompraVentaSIN\PryCertificaSIN.ServiceFacturacionCompraVentaSIN.respuestaRecepcion.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceFacturacionCompraVentaSIN\PryCertificaSIN.ServiceFacturacionCompraVentaSIN.validacionRecepcionMasivaFacturaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceFacturacionCompraVentaSIN\PryCertificaSIN.ServiceFacturacionCompraVentaSIN.validacionRecepcionPaqueteFacturaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceFacturacionCompraVentaSIN\PryCertificaSIN.ServiceFacturacionCompraVentaSIN.verificacionEstadoFacturaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceFacturacionCompraVentaSIN\PryCertificaSIN.ServiceFacturacionCompraVentaSIN.verificarComunicacionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceFacturacionCompraVentaSIN\ServicioFacturacion.wsdl" />
+    <None Include="Connected Services\ServiceFacturacionCompraVentaSIN\ServicioFacturacion1.wsdl" />
+    <None Include="Connected Services\ServiceFacturacionOperacionesSIN\PryCertificaSIN.ServiceFacturacionOperacionesSIN.cierreOperacionesSistemaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceFacturacionOperacionesSIN\PryCertificaSIN.ServiceFacturacionOperacionesSIN.cierrePuntoVentaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceFacturacionOperacionesSIN\PryCertificaSIN.ServiceFacturacionOperacionesSIN.consultaEventoSignificativoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceFacturacionOperacionesSIN\PryCertificaSIN.ServiceFacturacionOperacionesSIN.consultaPuntoVentaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceFacturacionOperacionesSIN\PryCertificaSIN.ServiceFacturacionOperacionesSIN.registroEventoSignificativoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceFacturacionOperacionesSIN\PryCertificaSIN.ServiceFacturacionOperacionesSIN.registroPuntoVentaComisionistaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceFacturacionOperacionesSIN\PryCertificaSIN.ServiceFacturacionOperacionesSIN.registroPuntoVentaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceFacturacionOperacionesSIN\PryCertificaSIN.ServiceFacturacionOperacionesSIN.respuestaCierrePuntoVenta.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceFacturacionOperacionesSIN\PryCertificaSIN.ServiceFacturacionOperacionesSIN.respuestaCierreSistemas.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceFacturacionOperacionesSIN\PryCertificaSIN.ServiceFacturacionOperacionesSIN.respuestaComunicacion.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceFacturacionOperacionesSIN\PryCertificaSIN.ServiceFacturacionOperacionesSIN.respuestaConsultaPuntoVenta.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceFacturacionOperacionesSIN\PryCertificaSIN.ServiceFacturacionOperacionesSIN.respuestaListaEventos.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceFacturacionOperacionesSIN\PryCertificaSIN.ServiceFacturacionOperacionesSIN.respuestaPuntoVentaComisionista.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceFacturacionOperacionesSIN\PryCertificaSIN.ServiceFacturacionOperacionesSIN.respuestaRegistroPuntoVenta.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceFacturacionOperacionesSIN\PryCertificaSIN.ServiceFacturacionOperacionesSIN.verificarComunicacionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceFacturacionOperacionesSIN\ServicioFacturacionOperaciones.wsdl" />
+    <None Include="Connected Services\ServiceFacturacionOperacionesSIN\ServicioFacturacionOperaciones1.wsdl" />
+    <None Include="Connected Services\ServiceRecepcionComprasSIN\PryCertificaSIN.ServiceRecepcionComprasSIN.anulacionCompraResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceRecepcionComprasSIN\PryCertificaSIN.ServiceRecepcionComprasSIN.confirmacionComprasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceRecepcionComprasSIN\PryCertificaSIN.ServiceRecepcionComprasSIN.consultaComprasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceRecepcionComprasSIN\PryCertificaSIN.ServiceRecepcionComprasSIN.recepcionPaqueteComprasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceRecepcionComprasSIN\PryCertificaSIN.ServiceRecepcionComprasSIN.respuestaComunicacion.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceRecepcionComprasSIN\PryCertificaSIN.ServiceRecepcionComprasSIN.respuestaConsultaCompras.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceRecepcionComprasSIN\PryCertificaSIN.ServiceRecepcionComprasSIN.respuestaRecepcion.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceRecepcionComprasSIN\PryCertificaSIN.ServiceRecepcionComprasSIN.validacionRecepcionPaqueteComprasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceRecepcionComprasSIN\PryCertificaSIN.ServiceRecepcionComprasSIN.verificarComunicacionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceRecepcionComprasSIN\ServicioFacturacion.wsdl" />
+    <None Include="Connected Services\ServiceRecepcionComprasSIN\ServicioRecepcionCompras.wsdl" />
+    <None Include="Connected Services\ServiceSincronizaSIN\PryCertificaSIN.ServiceSincronizaSIN.respuestaComunicacion.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceSincronizaSIN\PryCertificaSIN.ServiceSincronizaSIN.respuestaFechaHora.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceSincronizaSIN\PryCertificaSIN.ServiceSincronizaSIN.respuestaListaActividades.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceSincronizaSIN\PryCertificaSIN.ServiceSincronizaSIN.respuestaListaActividadesDocumentoSector.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceSincronizaSIN\PryCertificaSIN.ServiceSincronizaSIN.respuestaListaParametricas.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceSincronizaSIN\PryCertificaSIN.ServiceSincronizaSIN.respuestaListaParametricasLeyendas.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceSincronizaSIN\PryCertificaSIN.ServiceSincronizaSIN.respuestaListaProductos.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceSincronizaSIN\PryCertificaSIN.ServiceSincronizaSIN.sincronizarActividadesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceSincronizaSIN\PryCertificaSIN.ServiceSincronizaSIN.sincronizarFechaHoraResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceSincronizaSIN\PryCertificaSIN.ServiceSincronizaSIN.sincronizarListaActividadesDocumentoSectorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceSincronizaSIN\PryCertificaSIN.ServiceSincronizaSIN.sincronizarListaLeyendasFacturaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceSincronizaSIN\PryCertificaSIN.ServiceSincronizaSIN.sincronizarListaMensajesServiciosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceSincronizaSIN\PryCertificaSIN.ServiceSincronizaSIN.sincronizarListaProductosServiciosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceSincronizaSIN\PryCertificaSIN.ServiceSincronizaSIN.sincronizarParametricaEventosSignificativosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceSincronizaSIN\PryCertificaSIN.ServiceSincronizaSIN.sincronizarParametricaMotivoAnulacionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceSincronizaSIN\PryCertificaSIN.ServiceSincronizaSIN.sincronizarParametricaPaisOrigenResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceSincronizaSIN\PryCertificaSIN.ServiceSincronizaSIN.sincronizarParametricaTipoDocumentoIdentidadResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceSincronizaSIN\PryCertificaSIN.ServiceSincronizaSIN.sincronizarParametricaTipoDocumentoSectorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceSincronizaSIN\PryCertificaSIN.ServiceSincronizaSIN.sincronizarParametricaTipoEmisionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceSincronizaSIN\PryCertificaSIN.ServiceSincronizaSIN.sincronizarParametricaTipoHabitacionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceSincronizaSIN\PryCertificaSIN.ServiceSincronizaSIN.sincronizarParametricaTipoMetodoPagoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceSincronizaSIN\PryCertificaSIN.ServiceSincronizaSIN.sincronizarParametricaTipoMonedaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceSincronizaSIN\PryCertificaSIN.ServiceSincronizaSIN.sincronizarParametricaTipoPuntoVentaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceSincronizaSIN\PryCertificaSIN.ServiceSincronizaSIN.sincronizarParametricaTiposFacturaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceSincronizaSIN\PryCertificaSIN.ServiceSincronizaSIN.sincronizarParametricaUnidadMedidaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceSincronizaSIN\PryCertificaSIN.ServiceSincronizaSIN.verificarComunicacionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceSincronizaSIN\ServicioFacturacionSincronizacion.wsdl" />
+    <None Include="Connected Services\ServiceSincronizaSIN\ServicioFacturacionSincronizacion1.wsdl" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\ServiceFacturacionCodigosSIN\" />
+    <WCFMetadataStorage Include="Connected Services\ServiceFacturacionCompraVentaSIN\" />
+    <WCFMetadataStorage Include="Connected Services\ServiceFacturacionOperacionesSIN\" />
+    <WCFMetadataStorage Include="Connected Services\ServiceRecepcionComprasSIN\" />
+    <WCFMetadataStorage Include="Connected Services\ServiceSincronizaSIN\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceSincronizaSIN\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceSincronizaSIN\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceSincronizaSIN\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceRecepcionComprasSIN\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceRecepcionComprasSIN\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceRecepcionComprasSIN\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceFacturacionOperacionesSIN\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceFacturacionOperacionesSIN\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceFacturacionOperacionesSIN\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceFacturacionCodigosSIN\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceFacturacionCodigosSIN\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceFacturacionCodigosSIN\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceFacturacionCompraVentaSIN\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceFacturacionCompraVentaSIN\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceFacturacionCompraVentaSIN\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

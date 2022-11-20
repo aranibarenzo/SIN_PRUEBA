@@ -1,0 +1,10 @@
+C:\Users\enzoa\source\repos\PryCertificaSIN\PryCertificaSIN\bin\Debug\PryCertificaSIN.exe.config
+C:\Users\enzoa\source\repos\PryCertificaSIN\PryCertificaSIN\bin\Debug\PryCertificaSIN.exe
+C:\Users\enzoa\source\repos\PryCertificaSIN\PryCertificaSIN\bin\Debug\PryCertificaSIN.pdb
+C:\Users\enzoa\source\repos\PryCertificaSIN\PryCertificaSIN\obj\Debug\PryCertificaSIN.csproj.AssemblyReference.cache
+C:\Users\enzoa\source\repos\PryCertificaSIN\PryCertificaSIN\obj\Debug\PryCertificaSIN.frmMainSIN.resources
+C:\Users\enzoa\source\repos\PryCertificaSIN\PryCertificaSIN\obj\Debug\PryCertificaSIN.Properties.Resources.resources
+C:\Users\enzoa\source\repos\PryCertificaSIN\PryCertificaSIN\obj\Debug\PryCertificaSIN.csproj.GenerateResource.cache
+C:\Users\enzoa\source\repos\PryCertificaSIN\PryCertificaSIN\obj\Debug\PryCertificaSIN.csproj.CoreCompileInputs.cache
+C:\Users\enzoa\source\repos\PryCertificaSIN\PryCertificaSIN\obj\Debug\PryCertificaSIN.exe
+C:\Users\enzoa\source\repos\PryCertificaSIN\PryCertificaSIN\obj\Debug\PryCertificaSIN.pdb
